@@ -1,0 +1,7 @@
+{
+    "name": "pulsarwriter",
+    "class": "com/alibaba/data/plugin/writer/pulsarwriter",
+    "description": "use put: prod. mechanism: use pulsar java api put data.",
+    "developer": "JueShan"
+}
+
