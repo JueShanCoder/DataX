@@ -4,9 +4,10 @@ import com.alibaba.datax.common.spi.ErrorCode;
 
 public enum PulsarWriterErrorCode implements ErrorCode {
 
-    SERVICE_URL_ERROR("PulsarWriter-00","Pulsar服务地址配置错误！"),
+    CONFIG_ERROR("PulsarWriter-00","您配置的值不合法！"),
     CONN_PULSAR_ERROR("PulsarWriter-01","连接Pulsar服务失败！"),
-    CLOSE_PULSAR_ERROR("PulsarWriter-02","关闭Pulsar组件失败！"),
+    CREATE_PRODUCER_ERROR("PulsarWriter-02","创建Pulsar Producer失败！"),
+    CLOSE_PULSAR_ERROR("PulsarWriter-03","关闭Pulsar组件失败！"),
     ;
     private final String code;
     private final String description;

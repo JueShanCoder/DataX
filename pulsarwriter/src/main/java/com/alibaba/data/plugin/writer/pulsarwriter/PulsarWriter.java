@@ -16,6 +16,7 @@ public class PulsarWriter extends Writer {
 
         private Configuration conf = null;
 
+        private PulsarClient pulsarClient = null;
 
         @Override
         public void init() {
@@ -24,7 +25,10 @@ public class PulsarWriter extends Writer {
 
         @Override
         public void prepare() {
-
+            // 初始化PulsarClient
+            PulsarClientConf pulsarClient = new PulsarClientConf();
+            pulsarClient.createPulsarClient(conf);
+            //TODO 判断 Topic 是否存在，namespace 是否存在，如果不存在则创建
         }
 
         @Override
@@ -42,8 +46,16 @@ public class PulsarWriter extends Writer {
 
         private static final Logger log = LoggerFactory.getLogger(Job.class);
 
+        private Configuration conf = null;
+
         @Override
         public void init() {
+            this.conf = super.getPluginJobConf();
+        }
+
+        @Override
+        public void prepare() {
+            // 初始化PulsarClient
 
         }
 
