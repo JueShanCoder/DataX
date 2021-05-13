@@ -56,7 +56,8 @@ public class PulsarWriter extends Writer {
         @Override
         public void prepare() {
             // 初始化PulsarClient
-
+            PulsarClientConf pulsarClient = new PulsarClientConf();
+            pulsarClient.createPulsarClient(conf);
         }
 
         @Override
